@@ -1,4 +1,4 @@
-// app/api/route.js
+// app/api/users/route.js
 import { Client } from 'pg';
 import dotenv from 'dotenv';
 dotenv.config();
