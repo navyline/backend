@@ -33,7 +33,7 @@ export async function POST(request) {
     if (res.rows.length === 0) {
       return new Response(JSON.stringify({ error: 'User not found' }), {
         status: 404,
-        headers: { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json' },
+        headers: { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json' }
       });
     }
 
@@ -43,7 +43,7 @@ export async function POST(request) {
     if (!match) {
       return new Response(JSON.stringify({ error: 'Invalid password' }), {
         status: 401,
-        headers: { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json' },
+        headers: { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json' }
       });
     }
 
@@ -52,14 +52,14 @@ export async function POST(request) {
 
     return new Response(JSON.stringify({ message: 'Login successful', user, token }), {
       status: 200,
-      headers: { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json' },
+      headers: { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json' }
     });
 
   } catch (error) {
     console.error(error);
     return new Response(JSON.stringify({ error: 'Internal Server Error' }), {
       status: 500,
-      headers: { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json' },
+      headers: { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json' }
     });
   }
 }
